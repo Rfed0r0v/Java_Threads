@@ -11,9 +11,9 @@ class ThreadSender implements Runnable {
 
         while (true) {
             System.out.println(Thread.currentThread() + " send - " + String.valueOf(i));
-            m.put(String.valueOf(i));
+            m.put(i);
             try {
-                Thread.sleep(500);
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 System.out.println("Interrupted exception");
             }
