@@ -8,7 +8,7 @@ class ThreadReceiver implements Runnable {
     @Override
     public void run() {
         while (true) {
-            System.out.println("Прочитано " + m.take());
+            System.out.println(Thread.currentThread() + " received  - " + m.take());
         }
 
 
