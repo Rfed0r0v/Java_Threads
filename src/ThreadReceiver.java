@@ -8,9 +8,10 @@ class ThreadReceiver implements Runnable {
     @Override
     public void run() {
         while (true) {
-            System.out.println(Thread.currentThread() + " received  - " + m.take());
+
+            if ((m.take()+1) % 5  == 0) {
+                System.out.println(Thread.currentThread() + " received  - " + m.take());
+            }
         }
-
-
     }
 }

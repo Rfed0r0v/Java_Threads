@@ -10,14 +10,12 @@ class ThreadSender implements Runnable {
     public void run() {
 
         while (true) {
+
             System.out.println(Thread.currentThread() + " send - " + String.valueOf(i));
-            m.put(i);
+            m.put(i++);
             try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                System.out.println("Interrupted exception");
-            }
-            i++;
+                Thread.sleep(500);
+            } catch (InterruptedException e) { System.out.println("Interrupted exception"); }
         }
     }
 }

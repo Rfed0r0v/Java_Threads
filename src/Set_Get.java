@@ -7,15 +7,11 @@ public class Set_Get {
         } catch (InterruptedException e) {
             System.out.println("Перехвачено исключение");
         }
-        int result = this.message;
-        this.message = 0;
-        return result;
+        return this.message;
     }
 
     public synchronized void put(int message) {
         this.message = message;
-        if (message % 5 == 0) {
-            this.notify();
-        }
+        notifyAll();
     }
 }
