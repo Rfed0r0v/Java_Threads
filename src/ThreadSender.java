@@ -1,4 +1,5 @@
 class ThreadSender implements Runnable {
+    int i = 0;
     private Set_Get m;
 
     ThreadSender(Set_Get m) {
@@ -7,8 +8,16 @@ class ThreadSender implements Runnable {
 
     @Override
     public void run() {
+
         while (true) {
-            m.put(String.valueOf(Math.random()));
+            System.out.println(Thread.currentThread() + " send - " + String.valueOf(i));
+            m.put(String.valueOf(i));
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                System.out.println("Interrupted exception");
+            }
+            i++;
         }
     }
 }

@@ -8,12 +8,7 @@ class ThreadReceiver implements Runnable {
     @Override
     public void run() {
         while (true) {
-            try {
-                System.out.println("Прочитано " + m.take());
-                Thread.sleep(100);
-            } catch (InterruptedException e) {
-                System.out.println("Interrupted exception");
-            }
+            System.out.println("Прочитано " + m.take());
         }
 
 

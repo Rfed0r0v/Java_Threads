@@ -1,4 +1,5 @@
 public class MainClass {
+    public int i;
     public static void main(String[] args) {
         Thread arr[] = new Thread[2];
         Set_Get m = new Set_Get();
